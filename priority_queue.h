@@ -1,15 +1,20 @@
+#ifndef PRIORITY_QUEUE_H_
+#define PRIORITY_QUEUE_H_
+
 #include <queue>
 
-template <typename T> 
-class templatePriorityQueue {
+class PriorityQueue {
 	public:
-		templatePriorityQueue();
-		~templatePriorityQueue();
+		PriorityQueue();
+		~PriorityQueue();
 		bool empty() const;
-		const T& top() const;
+		const int& top() const;
 		int size();
-		void push(const T&);
-		void pop();	
+		void push(const int& value);
+		void pop();
 	private:
-		std::priority_queue<T> storage;
+		std::priority_queue<int> storage;
+
 };
+
+#endif  // PRIORITY_QUEUE_H_

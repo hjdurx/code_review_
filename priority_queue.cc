@@ -1,34 +1,37 @@
 #include "priority_queue.h"
 
-template <>
-templatePriorityQueue<int>::templatePriorityQueue(){
+
+PriorityQueue::PriorityQueue(){
 }
 
-template <>
-templatePriorityQueue<int>::~templatePriorityQueue(){
+
+PriorityQueue::~PriorityQueue(){
 }
 
-template <>
-bool templatePriorityQueue<int>::empty() const{
+
+bool PriorityQueue::empty() const{
         return storage.empty();
 }
 
-template <>
-int templatePriorityQueue<int>::size() {
+
+int PriorityQueue::size() {
         return storage.size();
 }
 
-template <>
-const int& templatePriorityQueue<int>::top() const{
-        return storage.top();
+
+const int& PriorityQueue::top() const {
+	if (empty() != true) {
+		return storage.top();
+	}
+	return 0;
 }
 
-template <>
-void templatePriorityQueue<int>::pop(){
-        storage.pop();
+void PriorityQueue::pop() {
+	if (empty() != true) {
+		storage.pop();
+	}
 }
 
-template <>
-void templatePriorityQueue<int>::push(const int& val){
-        storage.push(val);
+void PriorityQueue::push(const int& value){
+        storage.push(value);
 }
